@@ -3,15 +3,25 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
-import LoginScreen from './Screens/LoginScreen';
-
+import { createStackNavigator } from "@react-navigation/stack";
+import LoginScreen from './screens/LoginScreen';
 
 const Stack = createStackNavigator();
 
 export default function App() {
+
+  const globalScreenOptions = {
+    headerStyle: { backgroundColor: "#097969" },
+    headerTitleStyle: { color: "white" },
+    headerTintColor: "white",
+  }
+
   return (
     <NavigationContainer>
-      <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Navigator screenOptions={globalScreenOptions}>
+        <Stack.Screen
+          name="Login" component={LoginScreen} />
+      </Stack.Navigator>
     </NavigationContainer>
 
   );
