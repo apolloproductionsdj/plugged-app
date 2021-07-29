@@ -17,9 +17,6 @@ const LoginScreen = () => {
 
     console.log(email);
 
-    const buttonPressed = () => {
-
-    };
 
     return (
         <KeyboardAvoidingView behavior='padding' style={styles.container}>
@@ -48,9 +45,6 @@ const LoginScreen = () => {
                     onChangeText={(text) => setPassword(text)}
                 />
             </View>
-
-            {/* <Button containerStyle={styles.button} backgroundColor="red" onPress={signIn} title="Login" />
-            <Button containerStyle={styles.button} title="Register" type="outline" /> */}
             <TouchableOpacity
                 style={styles.loginScreenButton}
                 // onPress={() => navigate('HomeScreen')}
@@ -58,14 +52,11 @@ const LoginScreen = () => {
                 <Text style={styles.loginText}>Login</Text>
             </TouchableOpacity>
             <TouchableOpacity
-                style={styles.loginScreenButton}
+                style={styles.registerScreenButton}
                 // onPress={() => navigate('HomeScreen')}
                 underlayColor='#fff'>
-                <Text style={styles.loginText}>Register</Text>
+                <Text style={styles.registerText}>Register</Text>
             </TouchableOpacity>
-
-
-
             <View style={{ height: 100 }} />
         </KeyboardAvoidingView>
     )
@@ -101,10 +92,30 @@ const styles = StyleSheet.create({
         color: '#fff',
         textAlign: 'center',
         paddingLeft: 10,
-        paddingRight: 10
+        paddingRight: 10,
+        fontSize: 20,
+        fontWeight: '500',
     },
-    inputsContainer: {
-        flex: 1
+    registerScreenButton: {
+        marginRight: 40,
+        marginLeft: 40,
+        marginTop: 10,
+        paddingTop: 10,
+        paddingBottom: 10,
+        backgroundColor: 'white',
+        borderRadius: 10,
+        borderWidth: 1,
+        borderColor: '#1E6738',
+        // width: 200,
+        alignSelf: 'stretch',
     },
+    registerText: {
+        color: '#1E6738',
+        textAlign: 'center',
+        paddingLeft: 10,
+        paddingRight: 10,
+        fontSize: 20,
+        fontWeight: '500',
+    }
 
 })
