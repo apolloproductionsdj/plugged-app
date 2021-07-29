@@ -72,6 +72,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: "center",
         padding: 10,
+        backgroundColor: 'white',
     },
     inputContainer: {
         width: 300,
@@ -89,6 +90,11 @@ const styles = StyleSheet.create({
         borderColor: '#fff',
         // width: 200,
         alignSelf: 'stretch',
+        shadowColor: 'rgba(0,0,0, .4)', // IOS
+        shadowOffset: { height: 1, width: 0 }, // IOS
+        shadowOpacity: 1, // IOS
+        shadowRadius: 1, //IOS
+        elevation: 2, // Android
     },
     loginText: {
         color: '#fff',
