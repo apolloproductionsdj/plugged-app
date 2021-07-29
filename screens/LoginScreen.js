@@ -7,7 +7,7 @@ import { Input, Image } from "react-native-elements";
 // import { SafeAreaInsetsContext } from 'react-native-safe-area-context';
 
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -47,15 +47,17 @@ const LoginScreen = () => {
             </View>
             <TouchableOpacity
                 style={styles.loginScreenButton}
-                // onPress={() => navigate('HomeScreen')}
+                onPress={signIn}
                 underlayColor='#fff'>
                 <Text style={styles.loginText}>Login</Text>
             </TouchableOpacity>
             <TouchableOpacity
                 style={styles.registerScreenButton}
-                // onPress={() => navigate('HomeScreen')}
+                onPress={() => navigation.navigate('Register')}
                 underlayColor='#fff'>
-                <Text style={styles.registerText}>Register</Text>
+                <Text style={styles.registerText}>
+                    Register
+                </Text>
             </TouchableOpacity>
             <View style={{ height: 100 }} />
         </KeyboardAvoidingView>
