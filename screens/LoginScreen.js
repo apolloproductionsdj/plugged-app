@@ -1,15 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { TouchableOpacity } from 'react-native';
 import { StyleSheet, Text, View } from 'react-native';
 import { KeyboardAvoidingView, Button, TouchableHighlight } from 'react-native';
 import { Input, Image } from "react-native-elements";
+import { auth } from '../firebase';
 // import { SafeAreaInsetsContext } from 'react-native-safe-area-context';
 
 
 const LoginScreen = ({ navigation }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    useEffect(() => {
+        const unsubscribe = auth.onAuthStateChanged((authUser) => {
+            if (authUser) {
+                navigation.replace('Home');
+            }
+        });
+        return unsubscribe;
+    }, []);
 
     const signIn = () => {
 
